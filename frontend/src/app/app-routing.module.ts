@@ -13,6 +13,7 @@ import {EquipmentsComponent} from './rm/equipments/equipments.component'
 import {StockComponent} from './rm/stock/stock.component'
 import {WorkorderComponent} from './rm/workorder/workorder.component'
 import {CreateaccountComponent} from './rm/createaccount/createaccount.component'
+
 import {MachinslistComponent} from './rm/machines/machinslist/machinslist.component'
 import {AddmachinsComponent} from './rm/machines/addmachins/addmachins.component'
 import {PreventionComponent} from './rm/machines/prevention/prevention.component'
@@ -31,15 +32,15 @@ const routes: Routes = [
   { path: 'stock', component: StockComponent },
   { path: 'workorder', component: WorkorderComponent },
   { path: 'create', component: CreateaccountComponent },
+
+
   { path: 'EnQueueComponent', component: EnQueueComponent },
   { path: 'AddWork-order', component: AddComponent },
-
-
 
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
 export class AppRoutingModule {}

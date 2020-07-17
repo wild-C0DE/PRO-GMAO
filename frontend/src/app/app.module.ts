@@ -12,6 +12,7 @@ import { EquipmentsComponent } from './rm/equipments/equipments.component';
 import { StockComponent } from './rm/stock/stock.component';
 import { WorkorderComponent } from './rm/workorder/workorder.component';
 import { CreateaccountComponent } from './rm/createaccount/createaccount.component';
+import { LoginComponent } from './login/login.component';
 
 import { WorkOrderComponent } from './rm/workorder/work-order/work-order.component';
 import { AddComponent } from './rm/workorder/add/add.component';
@@ -35,6 +36,8 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
     WorkorderComponent,
     CreateaccountComponent,
 
+    LoginComponent,
+
     WorkOrderComponent,
     AddComponent,
     EnQueueComponent,
@@ -44,9 +47,6 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
-
-
-
   ],
   imports: [
     BrowserModule,
