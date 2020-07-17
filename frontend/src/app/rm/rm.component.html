@@ -1,0 +1,90 @@
+<div>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+  />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/director">Home</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="/">logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div
+  class="w3-sidebar w3-bar-block w3-collapse w3-card w3-animate-left"
+  style="width: 150px;"
+  id="mySidebar"
+>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+  <button
+    class="w3-bar-item w3-button w3-large w3-hide-large"
+    onclick="w3_close()"
+  >
+    Close &times;
+  </button>
+  <br />
+  <br />
+  <br />
+  <br />
+  <a href="machines" class="w3-bar-item w3-button">machines</a>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <a href="equipments" class="w3-bar-item w3-button">equipments</a>
+  <br />
+  <br />
+  <br />
+  <br />
+  <a href="stock" class="w3-bar-item w3-button">stock</a>
+  <br />
+  <br />
+  <br />
+  <br />
+  <a href="workorder" class="w3-bar-item w3-button">work order</a>
+  <br />
+  <br />
+  <br />
+  <br />
+  <a href="create" class="w3-bar-item w3-button">create account</a>
+  <br />
+  <br />
+  <br />
+  <br />
+</div>
+
+<div class="w3-main" style="margin-left: 150px;">
+  <div class="w3-teal">
+    <button
+      class="w3-button w3-teal w3-xlarge w3-hide-large"
+      onclick="w3_open()"
+    >
+      &#9776;
+    </button>
+    <div class="w3-container">
+      <h1></h1>
+    </div>
+  </div>
+  <script>
+    function w3_open() {
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
+  <!-- <div></div>
+<app-machines></app-machines> -->
+</div>
