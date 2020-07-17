@@ -13,6 +13,11 @@ import { EquipmentsComponent } from './rm/equipments/equipments.component';
 import { StockComponent } from './rm/stock/stock.component';
 import { WorkorderComponent } from './rm/workorder/workorder.component';
 import { CreateaccountComponent } from './rm/createaccount/createaccount.component';
+import { MachinslistComponent } from './rm/machines/machinslist/machinslist.component';
+import { AddmachinsComponent } from './rm/machines/addmachins/addmachins.component';
+import { PreventionComponent } from './rm/machines/prevention/prevention.component';
+import { CorrectionComponent } from './rm/machines/correction/correction.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +31,13 @@ import { CreateaccountComponent } from './rm/createaccount/createaccount.compone
     EquipmentsComponent,
     StockComponent,
     WorkorderComponent,
-    CreateaccountComponent
+    CreateaccountComponent,
+    MachinslistComponent,
+    AddmachinsComponent,
+    PreventionComponent,
+    CorrectionComponent,
+
+
   ],
   imports: [
     BrowserModule,
