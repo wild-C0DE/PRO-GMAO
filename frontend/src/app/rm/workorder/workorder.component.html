@@ -6,10 +6,57 @@
   role="group"
   aria-label="Basic example"
 >
-  <button type="button" class="btn btn-secondary">work order ID</button>
-  <button type="button" class="btn btn-secondary">machine reference</button>
-  <button type="button" class="btn btn-secondary">intervention</button>
-  <button type="button" class="btn btn-secondary">work order status</button>
-  <button type="button" class="btn btn-secondary">date</button>
-  <button type="button" class="btn btn-secondary">duration</button>
+  <button
+    [routerLink]="['/workorder']"
+    type="button"
+    class="btn btn-secondary"
+  >
+    Work-Order
+  </button>
+  <button
+    [routerLink]="['/EnQueueComponent']"
+    type="button"
+    class="btn btn-secondary"
+  >
+     enqueue
+  </button>
+  <button
+  [routerLink]="['/AddWork-order']"
+  type="button"
+  class="btn btn-secondary"
+>
+   add-work-order
+</button>
+</div>
+<div id="table" style="margin-left: 150px;">
+  <table>
+    <tr>
+      <th>N° W-O</th>
+      <th>Date</th>
+      <th>Name of the intervention</th>
+      <th>Type of intervention</th>
+      <th>State</th>
+      <th>Machine</th>
+      <th>Manager</th>
+      <th>Agent</th>
+      <th>Depertment</th>
+      <th>Duration</th>
+      <th>equipment used</th>
+    </tr>
+    <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      
+    </tr>
+  
+  </table>
 </div>
