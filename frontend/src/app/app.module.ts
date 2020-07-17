@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RmComponent } from './rm/rm.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { RsComponent } from './rs/rs.component';
 import { MainComponent } from './main/main.component';
 import { MachinesComponent } from './rm/machines/machines.component';
@@ -13,18 +12,21 @@ import { EquipmentsComponent } from './rm/equipments/equipments.component';
 import { StockComponent } from './rm/stock/stock.component';
 import { WorkorderComponent } from './rm/workorder/workorder.component';
 import { CreateaccountComponent } from './rm/createaccount/createaccount.component';
+
+import { WorkOrderComponent } from './rm/workorder/work-order/work-order.component';
+import { AddComponent } from './rm/workorder/add/add.component';
+import { EnQueueComponent } from './rm/workorder/en-queue/en-queue.component';
+
 import { MachinslistComponent } from './rm/machines/machinslist/machinslist.component';
 import { AddmachinsComponent } from './rm/machines/addmachins/addmachins.component';
 import { PreventionComponent } from './rm/machines/prevention/prevention.component';
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
-
 
 @NgModule({
   declarations: [
     AppComponent,
     RmComponent,
     NavbarComponent,
-    SidebarComponent,
     RsComponent,
     MainComponent,
     MachinesComponent,
@@ -32,10 +34,17 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
     StockComponent,
     WorkorderComponent,
     CreateaccountComponent,
+
+    WorkOrderComponent,
+    AddComponent,
+    EnQueueComponent,
+    
+
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
+
 
 
   ],
