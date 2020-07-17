@@ -1,0 +1,44 @@
+
+fieldset
+{
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: px;	
+	width: 640px;
+	margin: 20px auto;
+}
+
+legend
+{
+	background: #FFF;
+	border: 1px solid #CCC;
+	padding: 10px;
+}
+
+label
+{
+	margin-bottom: 10px;
+	display: block;
+}
+
+input
+{
+	margin-bottom: 10px;
+}
+
+input[type="text"],input[type="password"],textarea
+{
+	padding: 8px;
+	width: 300px;
+	display: flex;
+}
+hr
+{
+	border:1px solid #EEE;
+
+}
+textarea
+{
+	margin-bottom: 10px;
+	height: 200px;
+}
