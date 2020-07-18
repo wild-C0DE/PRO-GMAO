@@ -17,8 +17,8 @@ const Machine = new Schema({
   },
 
   state: {
-    type: Boolean,
-    required: true,
+    type: String,
+    
   },
   brand: {
     type: String,

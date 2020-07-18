@@ -19,7 +19,7 @@
     correction
   </button>
 </div>
-<form  #addMachinsForm= "ngForm" >
+<form  #addMachinsForm= "ngForm" (ngSubmit)="addMachinsForm.valid && onSubmit(addMachinsForm)" >
     <fieldset>
         <legend style="text-align: center;">Fill me in </legend>
         <label>name</label>
@@ -57,5 +57,12 @@
         <textarea></textarea>
         <input type="submit" value="Send Your Data">
     </fieldset>
-
     </form>
+   <!-- Success message -->
+    <div class="success" *ngIf="showSuccessMessage">
+      Saved successfully
+    </div>
+    <!-- Error message -->
+    <div class="alert" *ngIf="serverErrorMessages">
+      {{serverErrorMessages}}
+    </div>

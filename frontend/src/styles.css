@@ -1,2 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+.success{
+    padding: 20px;
+    background-color:#249424; /* Green */
+    color: white;
+    margin-right: 155px;
+    margin-bottom: 15px;
+    margin-left: 155px
+  }
+  .alert {
+    padding: 20px;
+    background-color: #f44336; /* Red */
+    color: white;
+    margin-bottom: 15px;
+    margin-left: 155px
+  }
