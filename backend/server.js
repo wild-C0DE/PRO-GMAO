@@ -14,7 +14,7 @@ app.use(helmet());
 
 const PORT = process.env.PORT || 8080;
 
-const addMachine = require("./routes/api/users");
+const addMachine = require("./routes/machinesRoutes/machinesRoute");
 
 
 //************************************ */

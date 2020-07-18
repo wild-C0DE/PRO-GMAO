@@ -5,12 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "nodemon server.js",
+    "client": "cd../frontend && ng serve --open ",
+    "dev": "concurrently -n 'server,client' \"nodemon server.js\" \"npm run frontend\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "concurrently": "^5.2.0",
     "config": "^3.3.1",
     "express": "^4.17.1",
     "helmet": "^3.23.3",

@@ -4,6 +4,10 @@ import { RmComponent } from './rm/rm.component';
 import { RsComponent } from './rs/rs.component';
 import { MainComponent } from './main/main.component';
 import { MachinesComponent } from './rm/machines/machines.component';
+
+import { AddComponent } from './rm/workorder/add/add.component';
+import { EnQueueComponent } from './rm/workorder/en-queue/en-queue.component';
+
 import { EquipmentsComponent } from './rm/equipments/equipments.component';
 import { StockComponent } from './rm/stock/stock.component';
 import { WorkorderComponent } from './rm/workorder/workorder.component';
@@ -12,11 +16,9 @@ import { MachinslistComponent } from './rm/machines/machinslist/machinslist.comp
 import { AddmachinsComponent } from './rm/machines/addmachins/addmachins.component';
 import { PreventionComponent } from './rm/machines/prevention/prevention.component';
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
+
 const routes: Routes = [
-  {
-    path: 'director',
-    component: RmComponent,
-  },
+  { path: 'director', component: RmComponent },
   { path: 'responsable', component: RsComponent },
   { path: '', component: MainComponent },
   { path: 'machines', component: MachinesComponent },
@@ -28,6 +30,9 @@ const routes: Routes = [
   { path: 'stock', component: StockComponent },
   { path: 'workorder', component: WorkorderComponent },
   { path: 'create', component: CreateaccountComponent },
+
+  { path: 'EnQueueComponent', component: EnQueueComponent },
+  { path: 'AddWork-order', component: AddComponent },
 ];
 
 @NgModule({
