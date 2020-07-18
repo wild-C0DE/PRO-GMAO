@@ -1,0 +1,1 @@
+create a model class : ng g class user --type=model

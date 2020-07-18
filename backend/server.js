@@ -15,7 +15,7 @@ app.use(helmet());
 
 
 
-const addMachine = require("./routes/api/users");
+const addMachine = require("./routes/machinesRoutes/machinesRoute");
 
 //middlewares
 app.use(cors())

@@ -1,6 +1,9 @@
+//built-in imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
 
+//*******components***********
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RmComponent } from './rm/rm.component';
@@ -50,7 +53,8 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
