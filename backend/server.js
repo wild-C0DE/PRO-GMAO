@@ -9,20 +9,20 @@ const uri = process.env.URI;
 const PORT = process.env.PORT || 8080;
 const app = express();
 
-require('dotenv').config()
+// require('dotenv').config()
 // set a bunch of http headers on the site and secure them prevent click jacking
 app.use(helmet());
+const db = config.get("MONGO_URI")
 
 
-
-const addMachine = require("./routes/machinesRoutes/machinesRoute");
 
 //middlewares
 app.use(cors())
 
 
-//import routes
 const authRoute = require('./routes/auth.js');
+const workOrder = require('./routes/workOrderRoutes/work-order');
+const addMachine = require("./routes/machinesRoutes/machinesRoute");
 
 
 // route middlewares
@@ -33,7 +33,7 @@ app.use('/api/user', authRoute)
 //************************************ */
 // ************mongod DB*************
 mongoose
-  .connect( uri, {
+  .connect( db , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true,
@@ -52,5 +52,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(morgan("tiny"));
 //Use routes
 app.use("/api/addmachine", addMachine);
+app.use('/api/workOrder', workOrder)
 
 app.listen(PORT, console.log(`server is running on port ${PORT}`));
