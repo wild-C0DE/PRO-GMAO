@@ -8,6 +8,7 @@ const helmet = require("helmet");
 const uri = process.env.URI;
 const PORT = process.env.PORT || 8080;
 const app = express();
+const AutoIncrementFactory = require('mongoose-sequence');
 
 // require('dotenv').config()
 // set a bunch of http headers on the site and secure them prevent click jacking
@@ -39,10 +40,12 @@ mongoose
     useCreateIndex: true,
   })
   
-const connection = mongoose.connection;
+const connection =  mongoose.connection;
 connection.once('open', () => {
   console.log("MongoDB connected successfully");
 })
+const AutoIncrement = AutoIncrementFactory(connection);
+
 //data parsing
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
