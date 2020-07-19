@@ -1,8 +1,11 @@
 //built-in imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
 //*******components***********
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +27,11 @@ import { MachinslistComponent } from './rm/machines/machinslist/machinslist.comp
 import { AddmachinsComponent } from './rm/machines/addmachins/addmachins.component';
 import { PreventionComponent } from './rm/machines/prevention/prevention.component';
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { DataTableComponent } from './rm/machines/machinslist/data-table/data-table.component';
+import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
+import { MachinListService } from './shared/machin-list.service'
 
 @NgModule({
   declarations: [
@@ -40,20 +48,28 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
     WorkOrderComponent,
     AddComponent,
     EnQueueComponent,
-    
 
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
+
+    DataTableComponent,
+
+    DatalistComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [MachinListService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
