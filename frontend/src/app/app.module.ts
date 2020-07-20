@@ -29,7 +29,7 @@ import { PreventionComponent } from './rm/machines/prevention/prevention.compone
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import { DataTableComponent } from './rm/machines/machinslist/data-table/data-table.component';
+
 import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
 import { MachinListService } from './shared/machin-list.service'
 
@@ -54,7 +54,7 @@ import { MachinListService } from './shared/machin-list.service'
     PreventionComponent,
     CorrectionComponent,
 
-    DataTableComponent,
+
 
     DatalistComponent,
     
