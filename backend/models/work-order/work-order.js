@@ -23,12 +23,9 @@ const Work = new Schema({
   },
   state: {
     type: Boolean,
-    required: true,
+    required: false,
   },
-  supplierName: {
-    type: String,
-    required: true,
-  },
+  
   machine: {
     type: String,
     required: true,
