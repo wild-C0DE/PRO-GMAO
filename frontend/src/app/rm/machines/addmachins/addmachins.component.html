@@ -19,50 +19,139 @@
     correction
   </button>
 </div>
-<form  #addMachinsForm= "ngForm" (ngSubmit)="addMachinsForm.valid && onSubmit(addMachinsForm)" >
-    <fieldset>
-        <legend style="text-align: center;">Fill me in </legend>
-        <label>name</label>
-        <input class="form-control" type="text" #name="ngModel" [(ngModel)]="machinesService.selectedMachine.name" name="name" placeholder="enter the name of the machine" required [ngClass] = "{'invalid-textbox' :  addMachinsForm.submitted && !name.valid}">
-        <label>reference</label>
-        <input class="form-control" type="text" #reference="ngModel" [(ngModel)]="machinesService.selectedMachine.reference" name="reference" placeholder="enter the reference of the machine">
-        <label>family</label>
-        <input class="form-control" type="text" #family="ngModel" [(ngModel)]="machinesService.selectedMachine.family" name="family" placeholder="enter the family of the machine">
-        <label>state</label>
-        <input type="radio"name="lang"> actif <br>
-        <input type="radio"name="lang"> inactif <br>  
-        <br>
-        <label>brand</label>
-        <input class="form-control" type="text" #brand="ngModel" [(ngModel)]="machinesService.selectedMachine.brand" name="brand" placeholder="enter the brand of the machine">        
-        <label>supplier</label>       
-        <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" #supplierName="ngModel" [(ngModel)]="machinesService.selectedMachine.supplierName" name="supplierName" placeholder="enter the name of the supplier">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" #supplierContact="ngModel" [(ngModel)]="machinesService.selectedMachine.supplierContact" name="supplierContact" placeholder="enter the contact informations">
-            </div>
-          </div>  
-        <label>serial number</label>
-        <input class="form-control" type="text" #serialNumber="ngModel" [(ngModel)]="machinesService.selectedMachine.serialNumber" name="serialNumber" placeholder="enter the serial number">  
-        <label>date of purchase</label>
-        <input class="form-control" type="text" #dateOfPurchase="ngModel" [(ngModel)]="machinesService.selectedMachine.dateOfPurchase" name="dateOfPurchase" placeholder="enter the date of purchase">  
-        <label>inventory</label>
-        <input class="form-control" type="text" #inventory="ngModel" [(ngModel)]="machinesService.selectedMachine.inventory" name="inventory" placeholder="enter the inventory"> 
-        <label>ISBN</label>
-        <input class="form-control" type="text" #ISBN="ngModel" [(ngModel)]="machinesService.selectedMachine.ISBN" name="ISBN" placeholder="enter the ISBN"> 
-        <label>department</label>
-        <input class="form-control" type="department" #ISBN="ngModel" [(ngModel)]="machinesService.selectedMachine.department" name="department" placeholder="enter the department"> 
-        <legend>Your comment</legend>
-        <textarea class="form-control" type="comment" #comment="ngModel" [(ngModel)]="machinesService.selectedMachine.comment" name="comment" placeholder="enter your comment"></textarea>
-        <input type="submit" value="Send Your Data">
-    </fieldset>
-    </form>
-   <!-- Success message -->
-    <div class="success" *ngIf="showSuccessMessage">
-      Saved successfully
+<form
+  #addMachinsForm="ngForm"
+  (ngSubmit)="addMachinsForm.valid && onSubmit(addMachinsForm)"
+>
+  <fieldset>
+    <legend style="text-align: center;">Fill me in</legend>
+    <label>name</label>
+    <input
+      class="form-control"
+      type="text"
+      #name="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.name"
+      name="name"
+      placeholder="enter the name of the machine"
+      required
+      [ngClass]="{ 'invalid-textbox': addMachinsForm.submitted && !name.valid }"
+    />
+    <label>reference</label>
+    <input
+      class="form-control"
+      type="text"
+      #reference="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.reference"
+      name="reference"
+      placeholder="enter the reference of the machine"
+    />
+    <label>family</label>
+    <input
+      class="form-control"
+      type="text"
+      #family="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.family"
+      name="family"
+      placeholder="enter the family of the machine"
+    />
+    <label>state</label>
+    <input type="radio" name="lang" /> actif <br />
+    <input type="radio" name="lang" /> inactif <br />
+    <br />
+    <label>brand</label>
+    <input
+      class="form-control"
+      type="text"
+      #brand="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.brand"
+      name="brand"
+      placeholder="enter the brand of the machine"
+    />
+    <label>supplier</label>
+    <div class="row">
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          #supplierName="ngModel"
+          [(ngModel)]="machinesService.selectedMachine.supplierName"
+          name="supplierName"
+          placeholder="enter the name of the supplier"
+        />
+      </div>
+      <div class="col">
+        <input
+          type="text"
+          class="form-control"
+          #supplierContact="ngModel"
+          [(ngModel)]="machinesService.selectedMachine.supplierContact"
+          name="supplierContact"
+          placeholder="enter the contact informations"
+        />
+      </div>
     </div>
-    <!-- Error message -->
-    <div class="alert" *ngIf="serverErrorMessages">
-      {{serverErrorMessages}}
-    </div>
+    <label>serial number</label>
+    <input
+      class="form-control"
+      type="text"
+      #serialNumber="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.serialNumber"
+      name="serialNumber"
+      placeholder="enter the serial number"
+    />
+    <label>date of purchase</label>
+    <input
+      class="form-control"
+      type="text"
+      #dateOfPurchase="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.dateOfPurchase"
+      name="dateOfPurchase"
+      placeholder="enter the date of purchase"
+    />
+    <label>inventory</label>
+    <input
+      class="form-control"
+      type="text"
+      #inventory="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.inventory"
+      name="inventory"
+      placeholder="enter the inventory"
+    />
+    <label>ISBN</label>
+    <input
+      class="form-control"
+      type="text"
+      #ISBN="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.ISBN"
+      name="ISBN"
+      placeholder="enter the ISBN"
+    />
+    <label>department</label>
+    <input
+      class="form-control"
+      type="department"
+      #ISBN="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.department"
+      name="department"
+      placeholder="enter the department"
+    />
+    <legend>Your comment</legend>
+    <textarea
+      class="form-control"
+      type="comment"
+      #comment="ngModel"
+      [(ngModel)]="machinesService.selectedMachine.comment"
+      name="comment"
+      placeholder="enter your comment"
+    ></textarea>
+    <input type="submit" value="Send Your Data" />
+  </fieldset>
+</form>
+<!-- Success message -->
+<div class="success" *ngIf="showSuccessMessage">
+  Saved successfully
+</div>
+<!-- Error message -->
+<div class="alert" *ngIf="serverErrorMessages">
+  {{ serverErrorMessages }}
+</div>

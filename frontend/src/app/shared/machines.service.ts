@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment'
 })
 export class MachinesService {
   selectedMachine: MachinModel = {
-    name: "",
+  name: "",
   reference: "",
   family: "",
   state: "",
