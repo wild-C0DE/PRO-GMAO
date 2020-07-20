@@ -25,6 +25,7 @@ const authRoute = require('./routes/auth.js');
 const workOrder = require('./routes/workOrderRoutes/work-order');
 const addMachine = require("./routes/machinesRoutes/machinesRoute");
 const machineList = require("./routes/machinesRoutes/machinListRoute");
+const workorderList = require("./routes/workOrderRoutes/work-orderList");
 
 // route middlewares
 app.use('/api/user', authRoute)
@@ -57,4 +58,5 @@ app.use(morgan("tiny"));
 app.use("/api/addmachine", addMachine);
 app.use('/api/workOrder', workOrder)
 app.use('/api/machineList', machineList)
+app.use("/api/workorderList", workorderList)
 app.listen(PORT, console.log(`server is running on port ${PORT}`));

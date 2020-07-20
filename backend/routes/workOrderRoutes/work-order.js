@@ -4,7 +4,7 @@ const router = express.Router();
 const WorkOrder = require("../../models/work-order/work-order");
 
 router.post("/",(req,res)=>{
-
+ console.log(req.body)
   // WorkOrder.findOne({}, {}, { sort: { 'created_at' : -1 } }, (err, post) =>{
   //   const obj = post
   //   if(err){
