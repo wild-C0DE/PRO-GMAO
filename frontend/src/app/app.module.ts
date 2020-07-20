@@ -31,8 +31,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
+//*******services***********
 import { MachinListService } from './shared/machin-list.service'
-
+import {AddworkService} from "./rm/workorder/add/addwork.service"
+import {WorkorderListService} from "./rm/workorder/workorder-list.service"
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,11 +55,7 @@ import { MachinListService } from './shared/machin-list.service'
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
-
-
-
     DatalistComponent,
-    
   ],
   imports: [
     BrowserModule,
@@ -69,7 +67,7 @@ import { MachinListService } from './shared/machin-list.service'
     MatPaginatorModule,
     MatSortModule,
   ],
-  providers: [MachinListService],
+  providers: [MachinListService,AddworkService,WorkorderListService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -6,11 +6,7 @@
   role="group"
   aria-label="Basic example"
 >
-  <button
-    [routerLink]="['/workorder']"
-    type="button"
-    class="btn btn-secondary"
-  >
+  <button [routerLink]="['/workorder']" type="button" class="btn btn-secondary">
     Work-Order
   </button>
   <button
@@ -18,45 +14,88 @@
     type="button"
     class="btn btn-secondary"
   >
-     enqueue
+    enqueue
   </button>
   <button
-  [routerLink]="['/AddWork-order']"
-  type="button"
-  class="btn btn-secondary"
->
-   add-work-order
-</button>
+    [routerLink]="['/AddWork-order']"
+    type="button"
+    class="btn btn-secondary"
+  >
+    add-work-order
+  </button>
 </div>
-<div id="table" style="margin-left: 150px;">
-  <table>
-    <tr>
-      <th>N° W-O</th>
-      <th>Date</th>
-      <th>Name of the intervention</th>
-      <th>Type of intervention</th>
-      <th>State</th>
-      <th>Machine</th>
-      <th>Manager</th>
-      <th>Agent</th>
-      <th>Depertment</th>
-      <th>Duration</th>
-      <th>equipment used</th>
-    </tr>
-    <tr>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      <td>Germany</td>
-      <td>Alfreds Futterkiste</td>
-      <td>Maria Anders</td>
-      
-    </tr>
-  
-  </table>
+<div class='tab'>
+  <mat-table  class='tab' [dataSource]="dataSource">
+      <ng-container matColumnDef="name">
+          <mat-header-cell *matHeaderCellDef >Name</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.name}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="reference">
+          <mat-header-cell *matHeaderCellDef >Reference</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.reference}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="family">
+          <mat-header-cell *matHeaderCellDef >family</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.family}}</mat-cell>
+        </ng-container>         
+
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef >state</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.state}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="brand">
+          <mat-header-cell *matHeaderCellDef >brand</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.brand}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="supplierName">
+          <mat-header-cell *matHeaderCellDef >supplierName</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.supplierName}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="supplierContact">
+          <mat-header-cell *matHeaderCellDef >supplierContact</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.supplierContact}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="serialNumber">
+          <mat-header-cell *matHeaderCellDef >serialNumber</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.serialNumber}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="dateOfPurchase">
+          <mat-header-cell *matHeaderCellDef >dateOfPurchase</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.dateOfPurchase}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="inventory">
+          <mat-header-cell *matHeaderCellDef >inventory</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.inventory}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="ISBN">
+          <mat-header-cell *matHeaderCellDef >ISBN</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.ISBN}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="department">
+          <mat-header-cell *matHeaderCellDef >department</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.department}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="image">
+          <mat-header-cell *matHeaderCellDef >image</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.image}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="comment">
+          <mat-header-cell *matHeaderCellDef >comment</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.comment}}</mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
 </div>
