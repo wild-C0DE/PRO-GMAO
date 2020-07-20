@@ -20,6 +20,7 @@ export class MachinesService {
   ISBN: "",
   department: "",
   image: "",
+  comment:""
   }
 
   constructor(private http: HttpClient) { }

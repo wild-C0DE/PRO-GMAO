@@ -1,1 +1,5 @@
 create a model class : ng g class user --type=model
+
+
+generate a table : 
+ng generate @angular/material:material-table --name=data-table

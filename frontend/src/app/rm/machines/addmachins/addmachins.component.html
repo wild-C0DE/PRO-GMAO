@@ -54,7 +54,7 @@
         <label>department</label>
         <input class="form-control" type="department" #ISBN="ngModel" [(ngModel)]="machinesService.selectedMachine.department" name="department" placeholder="enter the department"> 
         <legend>Your comment</legend>
-        <textarea></textarea>
+        <textarea class="form-control" type="comment" #comment="ngModel" [(ngModel)]="machinesService.selectedMachine.comment" name="comment" placeholder="enter your comment"></textarea>
         <input type="submit" value="Send Your Data">
     </fieldset>
     </form>
