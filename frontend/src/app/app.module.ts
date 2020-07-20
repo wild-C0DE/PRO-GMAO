@@ -1,14 +1,26 @@
 //built-in imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+
 //*******components***********
+//siw 
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { ReactiveFormsModule } from '@angular/forms';
+//siw 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { RmComponent } from './rm/rm.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RsComponent } from './rs/rs.component';
@@ -51,6 +63,11 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
     AddComponent,
     EnQueueComponent,
 
+    //siw
+    HomeComponent,
+    LoginComponent,
+    //siw 
+
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
@@ -59,6 +76,7 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -67,7 +85,10 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
     MatPaginatorModule,
     MatSortModule,
   ],
-  providers: [MachinListService,AddworkService,WorkorderListService],
+
+  providers: [MachinListService,AddworkService,WorkorderListService, 
+  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent],
+
 })
 export class AppModule {}
