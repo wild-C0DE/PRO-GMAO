@@ -31,7 +31,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
-import { MachinListService } from './shared/machin-list.service'
+import { MachinListService } from './shared/machin/machin-list.service';
+
 
 @NgModule({
   declarations: [
@@ -57,6 +58,10 @@ import { MachinListService } from './shared/machin-list.service'
 
 
     DatalistComponent,
+
+
+
+   
     
   ],
   imports: [

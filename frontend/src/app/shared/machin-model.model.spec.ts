@@ -1,4 +1,4 @@
-import { MachinModel } from './machin-model.model';
+import { MachinModel } from './machin/machin-model.model';
 
 describe('MachinModel', () => {
   it('should create an instance', () => {
