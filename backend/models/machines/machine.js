@@ -55,6 +55,9 @@ const Machine = new Schema({
   image: {
     type: String,
   },
+  comment: {
+    type: String
+  }
 });
 
 // Model

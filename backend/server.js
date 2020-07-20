@@ -28,6 +28,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
 
+
 // use JWT auth to secure the api
 app.use(jwt());
 
@@ -38,6 +39,13 @@ app.use('/users', require('./users/users.controller'));
 app.use(errorHandler);
 
 // end of siwa's auth
+
+const authRoute = require('./routes/auth.js');
+const workOrder = require('./routes/workOrderRoutes/work-order');
+const addMachine = require("./routes/machinesRoutes/machinesRoute");
+const machineList = require("./routes/machinesRoutes/machinListRoute");
+const workorderList = require("./routes/workOrderRoutes/work-orderList");
+
 
 
 
@@ -71,5 +79,6 @@ app.use(morgan("tiny"));
 //Use routes
 app.use("/api/addmachine", addMachine);
 app.use('/api/workOrder', workOrder)
-
+app.use('/api/machineList', machineList)
+app.use("/api/workorderList", workorderList)
 app.listen(PORT, console.log(`server is running on port ${PORT}`));

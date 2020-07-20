@@ -1,9 +1,16 @@
 //built-in imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
-//siw 
+
+
 import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+
+import { FormsModule } from '@angular/forms';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+
 //*******components***********
 //siw 
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
@@ -32,7 +39,14 @@ import { MachinslistComponent } from './rm/machines/machinslist/machinslist.comp
 import { AddmachinsComponent } from './rm/machines/addmachins/addmachins.component';
 import { PreventionComponent } from './rm/machines/prevention/prevention.component';
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+
+import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
+//*******services***********
+import { MachinListService } from './shared/machin-list.service'
+import {AddworkService} from "./rm/workorder/add/addwork.service"
+import {WorkorderListService} from "./rm/workorder/workorder-list.service"
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,26 +62,33 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
     WorkOrderComponent,
     AddComponent,
     EnQueueComponent,
+
     //siw
     HomeComponent,
     LoginComponent,
     //siw 
+
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
+    DatalistComponent,
   ],
   imports: [
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
-  ],
-  bootstrap: [AppComponent]
+
+  providers: [MachinListService,AddworkService,WorkorderListService, 
+  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  bootstrap: [AppComponent],
+
 })
-export class AppModule { }
+export class AppModule {}

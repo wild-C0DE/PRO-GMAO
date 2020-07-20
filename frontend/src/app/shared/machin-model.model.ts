@@ -12,4 +12,5 @@ export class MachinModel {
   ISBN: string;
   department: string;
   image: string;
+  comment: string
 }

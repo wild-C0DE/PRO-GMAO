@@ -46,6 +46,7 @@ serverErrorMessages: string
   ISBN: "",
   department: "",
   image: "",
+  comment:""
     }
     form.resetForm();
     this.serverErrorMessages = "";

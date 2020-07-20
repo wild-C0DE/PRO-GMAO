@@ -1,7 +1,8 @@
 
 fieldset
 {
-	background: #FFF;
+	background: #ccebff
+	;
 	border: 1px solid #CCC;
 	padding: px;	
 	width: 640px;
@@ -10,9 +11,12 @@ fieldset
 
 legend
 {
-	background: #FFF;
+	background: #1aa3ff;
 	border: 1px solid #CCC;
 	padding: 10px;
+	font-family: Tahoma, Geneva, sans-serif;
+
+	font-weight: bold;
 }
 
 label

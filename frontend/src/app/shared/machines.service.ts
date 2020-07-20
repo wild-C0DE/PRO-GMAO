@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment'
 })
 export class MachinesService {
   selectedMachine: MachinModel = {
-    name: "",
+  name: "",
   reference: "",
   family: "",
   state: "",
@@ -20,6 +20,7 @@ export class MachinesService {
   ISBN: "",
   department: "",
   image: "",
+  comment:""
   }
 
   constructor(private http: HttpClient) { }
