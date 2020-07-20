@@ -1,11 +1,14 @@
+require('rootpath')();
 const express = require('express');
 const cors = require('cors');
 const mongoose = require('mongoose')
-const path = require("path");
 const morgan = require("morgan");
 const config = require("config");
 const helmet = require("helmet");
+const bodyParser = require('body-parser');
 const uri = process.env.URI;
+const jwt = require('_helpers/jwt');
+const errorHandler = require('_helpers/error-handler');
 const PORT = process.env.PORT || 8080;
 const app = express();
 const AutoIncrementFactory = require('mongoose-sequence');
@@ -20,14 +23,26 @@ const db = config.get("MONGO_URI")
 //middlewares
 app.use(cors())
 
+//authentication siwar don't touch 
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+app.use(cors());
 
-const authRoute = require('./routes/auth.js');
+// use JWT auth to secure the api
+app.use(jwt());
+
+// api routes
+app.use('/users', require('./users/users.controller'));
+
+// global error handler
+app.use(errorHandler);
+
+// end of siwa's auth
+
+
+
 const workOrder = require('./routes/workOrderRoutes/work-order');
 const addMachine = require("./routes/machinesRoutes/machinesRoute");
-
-
-// route middlewares
-app.use('/api/user', authRoute)
 
 
 

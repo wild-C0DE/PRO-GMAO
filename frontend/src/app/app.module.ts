@@ -2,10 +2,18 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule }   from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http'
+//siw 
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
 //*******components***********
+//siw 
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { ReactiveFormsModule } from '@angular/forms';
+//siw 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { RmComponent } from './rm/rm.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RsComponent } from './rs/rs.component';
@@ -40,8 +48,10 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
     WorkOrderComponent,
     AddComponent,
     EnQueueComponent,
-    
-
+    //siw
+    HomeComponent,
+    LoginComponent,
+    //siw 
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
@@ -49,11 +59,15 @@ import { CorrectionComponent } from './rm/machines/correction/correction.compone
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+        { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

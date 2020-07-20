@@ -16,8 +16,18 @@ import { MachinslistComponent } from './rm/machines/machinslist/machinslist.comp
 import { AddmachinsComponent } from './rm/machines/addmachins/addmachins.component';
 import { PreventionComponent } from './rm/machines/prevention/prevention.component';
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
+//siw 
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { AuthGuard } from './_helpers';
+//end siw
+
 
 const routes: Routes = [
+  //siw 
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'login', component: LoginComponent },
+  //end siw
   { path: 'director', component: RmComponent },
   { path: 'responsable', component: RsComponent },
   { path: '', component: MainComponent },
@@ -32,6 +42,10 @@ const routes: Routes = [
   { path: 'create', component: CreateaccountComponent },
   { path: 'EnQueueComponent', component: EnQueueComponent },
   { path: 'AddWork-order', component: AddComponent },
+  //siw 
+  // otherwise redirect to home
+  { path: '**', redirectTo: '' }
+  //end siw
 ];
 
 @NgModule({

@@ -1,0 +1,51 @@
+﻿<div class="col-md-6 offset-md-3 mt-5">
+    
+    <div class="card">
+        <h4 class="card-header">CMMS</h4>
+        
+        <div class="card-body">
+       
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <!-- <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"  #mySelect
+                        (change)='onOptionsSelected(mySelect.value)'>
+                          Profession
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                          <a class="dropdown-item" href="#"  >Director</a>
+                          <a class="dropdown-item" href="#">Responsible</a>
+                          <a class="dropdown-item" href="#">Agent</a>
+                        </div>
+                      </div> -->
+                      <select id="mySelect"  #mySelect
+                      (change)='onOptionsSelected(mySelect.value)'>
+                        <option value="Director">Director</option>
+                        <option value="Responsible">Responsible</option>
+                        <option value="Agent">Agent</option>
+                        
+                      </select>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+                    <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">Username is required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+                    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Password is required</div>
+                    </div>
+                </div>
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+                <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
+            </form>
+        </div>
+    </div>
+</div> 
