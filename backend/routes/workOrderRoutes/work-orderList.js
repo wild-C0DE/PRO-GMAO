@@ -7,7 +7,7 @@ const WorkOrder = require("../../models/work-order/work-order");
 
 
 router.get("/", (req, res) => {
-
+ console.log(req)
     WorkOrder.find({})
     .then((data) => {
       res.send(data);
