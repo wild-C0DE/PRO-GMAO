@@ -1,0 +1,63 @@
+
+<div class='tab'>
+  <mat-table  class='tab' [dataSource]="dataSource">
+      <ng-container matColumnDef="numberOrder">
+          <mat-header-cell *matHeaderCellDef >numberOrder</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.numberOrder}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="date">
+          <mat-header-cell *matHeaderCellDef >date</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.date}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="nameOfTheIntervention">
+          <mat-header-cell *matHeaderCellDef >nameOfTheIntervention</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.nameOfTheIntervention}}</mat-cell>
+        </ng-container>         
+
+        <ng-container matColumnDef="typeOfIntervention">
+          <mat-header-cell *matHeaderCellDef >typeOfIntervention</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.typeOfIntervention}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="state">
+          <mat-header-cell *matHeaderCellDef >state</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.state}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="machine">
+          <mat-header-cell *matHeaderCellDef >machine</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.machine}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="manager">
+          <mat-header-cell *matHeaderCellDef >manager</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.manager}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="agent">
+          <mat-header-cell *matHeaderCellDef >agent</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.agent}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="depertment">
+          <mat-header-cell *matHeaderCellDef >depertment</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.depertment}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="duration">
+          <mat-header-cell *matHeaderCellDef >duration</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.duration}}</mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="equipmentUsed">
+          <mat-header-cell *matHeaderCellDef >equipmentUsed</mat-header-cell>
+          <mat-cell *matCellDef="let row">{{row.equipmentUsed}}</mat-cell>
+        </ng-container>
+
+        
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+</div>

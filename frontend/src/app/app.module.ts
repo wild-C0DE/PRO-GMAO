@@ -2,8 +2,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
-import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { FormsModule } from '@angular/forms';
 
@@ -12,12 +11,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
 
 //*******components***********
-//siw 
+//siw
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
 import { ReactiveFormsModule } from '@angular/forms';
-//siw 
+//siw
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -41,17 +40,16 @@ import { PreventionComponent } from './rm/machines/prevention/prevention.compone
 import { CorrectionComponent } from './rm/machines/correction/correction.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
 import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
 
 import { MachinListService } from './shared/machin/machin-list.service';
-import {MachinesService} from "./shared/machines.service"
-
+import { MachinesService } from './shared/machines.service';
 
 //*******services***********
 
-import {AddworkService} from "./rm/workorder/add/addwork.service"
-import {WorkorderListService} from "./rm/workorder/workorder-list.service"
+import { AddworkService } from './rm/workorder/add/addwork.service';
+import { WorkorderListService } from './rm/workorder/workorder-list.service';
+import { WorkorderlistComponent } from './rm/workorder/workorderlist/workorderlist.component';
 
 @NgModule({
   declarations: [
@@ -68,18 +66,18 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
     WorkOrderComponent,
     AddComponent,
     EnQueueComponent,
+    WorkorderlistComponent,
 
     //siw
     HomeComponent,
     LoginComponent,
-    //siw 
+    //siw
 
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
     DatalistComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -93,9 +91,14 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
     MatSortModule,
   ],
 
-  providers: [MachinListService,AddworkService,WorkorderListService, MachinesService,
-  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
+  providers: [
+    MachinListService,
+    AddworkService,
+    WorkorderListService,
+    MachinesService,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
-
 })
 export class AppModule {}
