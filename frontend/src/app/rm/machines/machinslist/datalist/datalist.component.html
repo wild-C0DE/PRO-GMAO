@@ -62,9 +62,14 @@
 
           <ng-container matColumnDef="image">
             <mat-header-cell *matHeaderCellDef >image</mat-header-cell>
-            <mat-cell *matCellDef="let row">{{row.image}}</mat-cell>
+            <mat-cell *matCellDef="let row"><img style="width: 100px;" src="{{row.image}}"/>
+              <!-- Require through a get request
+              get '/img/nameoftheimage'
+              res: res.sendFile(image)  
+              -->
+            </mat-cell>
           </ng-container>
-
+          <!-- <img src='../../../../../../../backend/{{row.image}}'> -->
           <ng-container matColumnDef="comment">
             <mat-header-cell *matHeaderCellDef >comment</mat-header-cell>
             <mat-cell *matCellDef="let row">{{row.comment}}</mat-cell>

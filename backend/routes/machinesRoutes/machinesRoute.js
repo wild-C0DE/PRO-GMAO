@@ -5,11 +5,12 @@ const multer = require("multer");
 const MachineList = require("../../models/machines/machine");
 
 const storage = multer.diskStorage({
-  destination: (req, file, callBack) => {
-    callBack(null, "uploads");
-  },
+  destination: "../frontend/src/assets/img",
+  // (req, file, callBack) => {
+  // callBack(null, "/");
+  //},
   filename: (req, file, callBack) => {
-    callBack(null, `machin_${file.originalname}`);
+    callBack(null, `machin_${file.originalname.replace(" ", "")}`);
   },
 });
 
@@ -19,7 +20,8 @@ router.post("/", upload.single("file"), (req, res, next) => {
   console.log(req.file);
   console.log(req.body);
   const data = req.body;
-  data.image = req.file.path;
+  data.image =  "../../../../../assets/img/"+req.file.filename
+  // req.file.path.replace("\\", "/");
 
   console.log(Object.values(data));
 
