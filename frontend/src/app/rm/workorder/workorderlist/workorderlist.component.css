@@ -1,0 +1,15 @@
+.tab {
+    margin-left: 90px ;
+    width: 150%;
+    overflow: auto;
+  } 
+mat-cell:hover {
+background-color: #f5f5f5;
+}
+mat-header-cell{
+    
+    color: #0000ff;
+    background-color: #e0e0eb;
+    font-size: 15px;
+  
+}
