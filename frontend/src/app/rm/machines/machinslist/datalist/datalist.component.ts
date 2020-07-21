@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { MachinListService } from '../../../../shared/machin-list.service'
+import { MachinListService } from '../../../../shared/machin/machin-list.service'
 import { Observable } from 'rxjs'
 import { DataSource } from '@angular/cdk/collections'
-import {MachinModel } from '../../../../shared/machin-model.model'
+import {MachinModel } from '../../../../shared/machin/machin-model.model'
 @Component({
   selector: 'app-datalist',
   templateUrl: './datalist.component.html',

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http'
-import { MachinModel } from './machin-model.model'
+import { MachinModel } from './machin/machin-model.model'
 import { environment } from '../../environments/environment'
 @Injectable({
   providedIn: 'root'

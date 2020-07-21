@@ -123,7 +123,7 @@
       type="text"
       #ISBN="ngModel"
       [(ngModel)]="machinesService.selectedMachine.ISBN"
-      name="ISBN"
+      name="isbn"
       placeholder="enter the ISBN"
     />
     <label>department</label>
@@ -144,9 +144,14 @@
       name="comment"
       placeholder="enter your comment"
     ></textarea>
-    <input type="submit" value="Send Your Data" />
+    <label>Image Machine</label>    
+      <input type="file" name="image" (change)="selectImage($event)" />     
+  <input type="submit" value="Send Your Data" />
+
   </fieldset>
 </form>
+
+  
 <!-- Success message -->
 <div class="success" *ngIf="showSuccessMessage">
   Saved successfully

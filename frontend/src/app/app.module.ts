@@ -43,10 +43,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
+
+import { MachinListService } from './shared/machin/machin-list.service';
+import {MachinesService} from "./shared/machines.service"
+
+
 //*******services***********
-import { MachinListService } from './shared/machin-list.service'
+
 import {AddworkService} from "./rm/workorder/add/addwork.service"
 import {WorkorderListService} from "./rm/workorder/workorder-list.service"
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +79,7 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
     PreventionComponent,
     CorrectionComponent,
     DatalistComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -86,7 +93,7 @@ import {WorkorderListService} from "./rm/workorder/workorder-list.service"
     MatSortModule,
   ],
 
-  providers: [MachinListService,AddworkService,WorkorderListService, 
+  providers: [MachinListService,AddworkService,WorkorderListService, MachinesService,
   { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent],
 
