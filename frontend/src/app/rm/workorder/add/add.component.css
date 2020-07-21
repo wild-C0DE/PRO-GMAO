@@ -1,37 +1,48 @@
-fieldset {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: px;
-  width: 640px;
-  margin: 20px auto;
+
+fieldset
+{
+	background: #ccebff
+	;
+	border: 1px solid #CCC;
+	padding: px;	
+	width: 640px;
+	margin: 20px auto;
 }
 
-legend {
-  background: #fff;
-  border: 1px solid #ccc;
-  padding: 10px;
+legend
+{
+	background: #1aa3ff;
+	border: 1px solid #CCC;
+	padding: 10px;
+	font-family: Tahoma, Geneva, sans-serif;
+
+	font-weight: bold;
 }
 
-label {
-  margin-bottom: 10px;
-  display: block;
+label
+{
+	margin-bottom: 10px;
+	display: block;
 }
 
-input {
-  margin-bottom: 10px;
+input
+{
+	margin-bottom: 10px;
 }
 
-input[type="text"],
-input[type="password"],
-textarea {
-  padding: 8px;
-  width: 300px;
-  display: flex;
+input[type="text"],input[type="password"],textarea
+{
+	padding: 8px;
+	width: 300px;
+	display: flex;
 }
-hr {
-  border: 1px solid #eee;
+hr
+{
+	border:1px solid #EEE;
+
 }
-textarea {
-  margin-bottom: 10px;
-  height: 200px;
+textarea
+{
+	margin-bottom: 10px;
+	height: 200px;
 }

@@ -1,14 +1,26 @@
 //built-in imports
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+
+import { HttpClientModule, HTTP_INTERCEPTORS  } from '@angular/common/http';
+
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+
 //*******components***********
+//siw 
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+import { HomeComponent } from './home';
+import { LoginComponent } from './login';
+import { ReactiveFormsModule } from '@angular/forms';
+//siw 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { RmComponent } from './rm/rm.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { RsComponent } from './rs/rs.component';
@@ -31,8 +43,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 import { DatalistComponent } from './rm/machines/machinslist/datalist/datalist.component';
-import { MachinListService } from './shared/machin/machin-list.service';
 
+import { MachinListService } from './shared/machin/machin-list.service';
+import {MachinesService} from "./shared/machines.service"
+
+
+//*******services***********
+
+import {AddworkService} from "./rm/workorder/add/addwork.service"
+import {WorkorderListService} from "./rm/workorder/workorder-list.service"
 
 @NgModule({
   declarations: [
@@ -50,22 +69,21 @@ import { MachinListService } from './shared/machin/machin-list.service';
     AddComponent,
     EnQueueComponent,
 
+    //siw
+    HomeComponent,
+    LoginComponent,
+    //siw 
+
     MachinslistComponent,
     AddmachinsComponent,
     PreventionComponent,
     CorrectionComponent,
-
-
-
     DatalistComponent,
 
-
-
-   
-    
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -74,7 +92,10 @@ import { MachinListService } from './shared/machin/machin-list.service';
     MatPaginatorModule,
     MatSortModule,
   ],
-  providers: [MachinListService],
+
+  providers: [MachinListService,AddworkService,WorkorderListService, MachinesService,
+  { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },{ provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }],
   bootstrap: [AppComponent],
+
 })
 export class AppModule {}

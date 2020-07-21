@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
+const AutoIncrement = require('mongoose-sequence')(mongoose);
+
 //*********Schema******** */
 const Schema = mongoose.Schema;
 const Work = new Schema({
-  // numberWorkOrder: { 
-  //   type: Number, unique: true, auto-inc 
-  // },
+  numberOrder: { 
+    type: Number, 
+    default : 0
+  },
   date: {
     type: Date,
     // `Date.now()` returns the current unix timestamp as a number
@@ -20,12 +23,9 @@ const Work = new Schema({
   },
   state: {
     type: Boolean,
-    required: true,
+    required: false,
   },
-  supplierName: {
-    type: String,
-    required: true,
-  },
+  
   machine: {
     type: String,
     required: true,
@@ -51,6 +51,9 @@ const Work = new Schema({
     required: true,
   },
 });
+
+Work.plugin(AutoIncrement, {inc_field: 'numberOrder'});
+
 // Model
  const WorkOrder = mongoose.model("WorkOrder", Work);
 module.exports = WorkOrder;

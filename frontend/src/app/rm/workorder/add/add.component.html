@@ -6,11 +6,7 @@
   role="group"
   aria-label="Basic example"
 >
-  <button
-    [routerLink]="['/workorder']"
-    type="button"
-    class="btn btn-secondary"
-  >
+  <button [routerLink]="['/workorder']" type="button" class="btn btn-secondary">
     Work-Order
   </button>
   <button
@@ -18,55 +14,107 @@
     type="button"
     class="btn btn-secondary"
   >
-     enqueue
+    enqueue
   </button>
   <button
-  [routerLink]="['/AddWork-order']"
-  type="button"
-  class="btn btn-secondary"
->
-   add-work-order
-</button>
+    [routerLink]="['/AddWork-order']"
+    type="button"
+    class="btn btn-secondary"
+  >
+    add-work-order
+  </button>
 </div>
-<form name="register">
-    <fieldset>
-        <legend style="text-align: center;">Fill me in </legend>
-        <label>name</label>
-        <input class="form-control" type="text" placeholder="enter the name of the machine">
-        <label>reference</label>
-        <input class="form-control" type="text" placeholder="enter the reference of the machine">
-        <label>family</label>
-        <input class="form-control" type="text" placeholder="enter the family of the machine">
-        <label>state</label>
-        <input type="radio"name="lang"> actif <br>
-        <input type="radio"name="lang"> inactif <br>  
-        <br>
-        <label>brand</label>
-        <input class="form-control" type="text" placeholder="enter the brand of the machine">        
-        <label>supplier</label>
-        <!-- <input class="form-control" type="text" placeholder="Default input">  -->
-        <div class="row">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="enter the name of the supplier">
-            </div>
-            <div class="col">
-              <input type="text" class="form-control" placeholder="enter the contact informations">
-            </div>
-          </div>  
-        <label>serial number</label>
-        <input class="form-control" type="text" placeholder="enter the serial number">  
-        <label>date of purchase</label>
-        <input class="form-control" type="text" placeholder="enter the date of purchase">  
-        <label>inventory</label>
-        <input class="form-control" type="text" placeholder="enter the inventory"> 
-        <label>ISBN</label>
-        <input class="form-control" type="text" placeholder="enter the ISBN"> 
-        <label>department</label>
-        <input class="form-control" type="text" placeholder="enter the department"> 
-        <legend>Your comment</legend>
-        <textarea></textarea>
-        <input type="submit" value="Send Your Data">
-    </fieldset>
+<form #addToDatabase="ngForm" (ngSubmit)="addToDatabase.valid && onSubmit(addToDatabase)">
+  <fieldset>
+    <legend style="text-align: center;">Fill me in</legend>
+    <label>Name of the intervention</label>
+    <input
+      class="form-control"
+      type="text"
+      #nameOftheIntervention
+      [(ngModel)]="addService.selectedAddwork.nameOfTheIntervention"
+      name="nameOfTheIntervention"
+      palceholder="Name Of The Intervention"
+      required
+    />
+    <label>Type of intervention</label>
+    <input
+      class="form-control"
+      type="text"
+      #typeOfIntervention
+      [(ngModel)]="addService.selectedAddwork.typeOfIntervention"
+      name="typeOfIntervention"
+      palceholder="Type of intervention"
+      required
+    />
+    <label>State</label>
+    <input type="radio" name="lang" /> enqueue <br />
+    <input type="radio" name="lang" /> done <br />
+    <br />
+    <label>Machine</label>
+    <input
+    class="form-control"
+    type="text"
+    #machine
+    [(ngModel)]="addService.selectedAddwork.machine"
+    name="machine"
+    palceholder="Machine"
+    required
+  />
+    <label>Manager</label>
+    <input
+    class="form-control"
+    type="text"
+    #manager
+    [(ngModel)]="addService.selectedAddwork.manager"
+    name="manager"
+    palceholder="Manager"
+    required
+  />
+    <label>Agent</label>
+    <input
+    class="form-control"
+    type="text"
+    #agent
+    [(ngModel)]="addService.selectedAddwork.agent"
+    name="agent"
+    palceholder="Agent"
+    required
+  />
+    <label>Depertment</label>
+    <input
+    class="form-control"
+    type="text"
+    #depertment
+    [(ngModel)]="addService.selectedAddwork.depertment"
+    name="depertment"
+    palceholder="Depertment"
+    required
+  />
+    <label>Duration</label>
+    <input
+    class="form-control"
+    type="text"
+    #duration
+    [(ngModel)]="addService.selectedAddwork.duration"
+    name="duration"
+    palceholder="Duration"
+    required
+  />
+    <label>equipment used</label>
+    <input
+    class="form-control"
+    type="text"
+    #equipmentUsed
+    [(ngModel)]="addService.selectedAddwork.equipmentUsed"
+    name="equipmentUsed"
+    palceholder="Equipment Used"
+    required
+  />
 
-    </form>
+    <input type="submit" value="Send Your Data" />
+  </fieldset>
+</form>
+<!-- Success message -->
 
+<!-- Error message -->
